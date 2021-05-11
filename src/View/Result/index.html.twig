@@ -1,5 +1,10 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <h1 class="text-light">And his name IS ....</h1>
+    <div class="bg-light">
+        <h1>{{ message }}</h1>
+        <form action="../Workshop/index" method="post">
+            <button class="btn btn-primary">>>> Retourner à l'atelier >>></button>
+        </form>
+    </div>
 {% endblock %}
