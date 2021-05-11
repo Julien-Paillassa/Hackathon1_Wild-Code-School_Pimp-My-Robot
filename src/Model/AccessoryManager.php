@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Model;
 
 class AccessoryManager extends AbstractManager
@@ -26,3 +25,4 @@ class AccessoryManager extends AbstractManager
         return $statement->fetch();
     }
 }
+

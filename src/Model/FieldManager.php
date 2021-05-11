@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Model;
 
 class FieldManager extends AbstractManager
@@ -12,5 +11,17 @@ class FieldManager extends AbstractManager
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
         }
         return $this->pdo->query($query)->fetchAll();
+    }
+
+    public function selectFieldById(int $id)
+    {
+        $query = "SELECT type, image
+                    FROM field
+                    WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
     }
 }
