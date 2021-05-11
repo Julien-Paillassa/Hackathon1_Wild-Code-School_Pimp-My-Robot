@@ -12,4 +12,16 @@ class FieldManager extends AbstractManager
         }
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function selectFieldById(int $id)
+    {
+        $query = "SELECT type, image
+                    FROM field
+                    WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }
