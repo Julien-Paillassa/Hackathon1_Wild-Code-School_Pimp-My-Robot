@@ -1,0 +1,33 @@
+.bg-robot-workshop {
+    background-image: url("/assets/images/maps/Desert martien.jpg");
+}
+
+.bg-robot-workshop img {
+    width: 250px;
+    margin: auto;
+}
+
+.equipment-list input {
+    display: none;
+}
+
+.equipment-list input[type="checkbox"]:checked + label {
+    border-radius: 12px;
+    background: #ffffff;
+    border: 1px solid #EBEBEB;
+    box-shadow: 0 0 0 transparent;
+}
+
+.equipment-list input[type="checkbox"] + label {
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow:  6px 6px 8px #e3e3e3,
+    -6px -6px 8px #ffffff;
+    border: 1px solid transparent;
+}
+
+.workshop-form, .gogogo-form {
+    background: white;
+    border-radius: 4px;
+}
+
