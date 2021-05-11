@@ -2,17 +2,22 @@
 
 {% block content %}
     <h1 class="text-light">OKAAY LET'S GOOOOOOOOOOoooooooooooo</h1>
-    <div class="journey-container d-flex justify-content-around my-5">
-        <div class="my-2">
-            <img src="/assets/images/maps/Desert martien.jpg" alt="departure point">
-            <div class="complete-robot d-flex flex-column">
-                <img src="/assets/images/equipments/rocket.svg" alt="">
-                <img src="/assets/images/equipments/robot_flat.svg" alt="">
-                <img src="/assets/images/equipments/cater.svg" alt="">
+        <div class="journey-container d-flex justify-content-around my-5">
+            <div class="my-2">
+                <img src="/assets/images/maps/Desert martien.jpg" alt="departure point">
+                <div class="complete-robot d-flex flex-column">
+                    <img src="/assets/images/equipments/rocket.svg" alt="">
+                    <img src="/assets/images/equipments/robot_flat.svg" alt="">
+                    <img src="/assets/images/equipments/cater.svg" alt="">
+                </div>
+            </div>
+            <div class="my-2">
+                <img src="/assets/images/maps/Montagne Mars.jpg" alt="next destination">
             </div>
         </div>
-        <div class="my-2">
-            <img src="/assets/images/maps/Montagne Mars.jpg" alt="next destination">
-        </div>
+    <div class="container">
+        <form action="../Result/index" method="post" class="text-center my-2">
+            <button class="btn btn-primary">-- RAPPORT DE SITUATION --</button>
+        </form>
     </div>
 {% endblock %}
