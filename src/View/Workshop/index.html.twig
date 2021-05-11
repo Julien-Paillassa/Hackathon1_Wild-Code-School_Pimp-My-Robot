@@ -8,7 +8,7 @@
                 <div class="equipment-list row p-5">
                     {% for i in 0..5 %}
                         <div class="col-4">
-                            <input type="checkbox" name="equipment[]" id="equipment{{ loop.index }}">
+                            <input type="checkbox" name="equipment[]" id="equipment{{ loop.index }}" value="{{ loop.index }}">
                             <label role="button" class="p-3 m-1" for="equipment{{ loop.index }}"><img src="/assets/images/equipments/cater.svg" alt="robot" width="100px"></label>
                         </div>
                     {% endfor %}

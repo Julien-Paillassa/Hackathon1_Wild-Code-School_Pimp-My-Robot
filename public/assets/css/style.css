@@ -1,8 +1,9 @@
 @import "workshop.css";
 body {
-    background: black;
+    background: white;
 }
 
 .btn, .btn-primary {
     background-color: #AE4C13;
+    border: 1px solid transparent;
 }
