@@ -34,7 +34,6 @@ class WorkshopController extends AbstractController
                     $equippedAccessories[] = $accessoryManager->getAccessoryById($equipmentId);
                 }
             }
-            var_dump($equippedAccessories);
             if (empty($errors)) {
                 return $this->twig->render('Workshop/index.html.twig', [
                     'session' => $_SESSION,
