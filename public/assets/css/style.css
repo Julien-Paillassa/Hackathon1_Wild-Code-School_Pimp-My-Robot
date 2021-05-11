@@ -1,3 +1,8 @@
-.bg-robot-workshop img {
-    width: 250px;
+@import "workshop.css";
+body {
+    background: black;
+}
+
+.btn, .btn-primary {
+    background-color: #AE4C13;
 }
