@@ -8,7 +8,7 @@
                 <div class="equipment-list row p-5">
                     {% for i in 0..5 %}
                         <div class="col-4">
-                            <input type="checkbox" name="equipment[]" id="equipment{{ loop.index }}">
+                            <input type="checkbox" name="equipment[]" id="equipment{{ loop.index }}" value="{{ loop.index }}">
                             <label role="button" class="p-3 m-1" for="equipment{{ loop.index }}"><img src="/assets/images/equipments/cater.svg" alt="robot" width="100px"></label>
                         </div>
                     {% endfor %}
@@ -23,7 +23,7 @@
                 </div>
             </form>
 
-            <form class="gogogo-form col-5 d-flex flex-column align-item-center justify-content-center" action="journey" method="post">
+            <form class="gogogo-form col-5 d-flex flex-column align-item-center justify-content-center" action="../Journey/index" method="post">
                 <div class="my-2">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem dolorum ea eaque facilis ipsa modi, optio pariatur porro quam qui quis quos reiciendis rerum sint, tenetur ullam ut voluptate!</p>
                 </div>

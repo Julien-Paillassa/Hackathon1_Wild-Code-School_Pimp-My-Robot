@@ -13,4 +13,16 @@ class AccessoryManager extends AbstractManager
         }
         return $this->pdo->query($query)->fetchAll();
     }
+
+    public function getAccessoryById(int $id)
+    {
+        $query = "SELECT *
+                    FROM accessories
+                    WHERE id=:id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('id', $id, \PDO::PARAM_INT);
+        $statement->execute();
+
+        return $statement->fetch();
+    }
 }

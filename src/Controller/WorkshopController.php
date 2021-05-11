@@ -23,10 +23,39 @@ class WorkshopController extends AbstractController
         var_dump($robots);
         var_dump($accessories);
 
+        $equippedAccessories = [];
+        $errors = [];
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_POST['equipment'])) {
+                $errors['errorEquipment'] = 'Veuillez choisir au moins un équipement';
+            } else {
+                foreach ($_POST['equipment'] as $equipmentId) {
+                    $accessoryManager= new AccessoryManager();
+                    $equippedAccessories = $accessoryManager->getAccessoryById($equipmentId);
+                }
+            }
+            var_dump($equippedAccessories);die();
+            if (empty($errors)) {
+                return $this->twig->render('Workshop/index.html.twig', [
+                    'equipments' => $equipments,
+                    'accessories' => $accessories,
+                    'robots' => $robots,
+                    'fields' => $fields,
+                ]);
+            }
+        }
         return $this->twig->render('Workshop/index.html.twig', [
             'accessories' => $accessories,
             'robots' => $robots,
             'fields' => $fields,
+            'errors' => $errors,
         ]);
+    }
+
+
+    public function result()
+    {
+
     }
 }
