@@ -10,6 +10,8 @@ class WorkshopController extends AbstractController
 {
     public function index()
     {
+        $_SESSION['round'] = 1;
+
         $accessoryManager = new AccessoryManager();
         $accessories = $accessoryManager->selectAllAccessories();
 
@@ -17,17 +19,46 @@ class WorkshopController extends AbstractController
         $robots = $robotManager->selectAllRobots();
 
         $fieldManager = new FieldManager();
-        $fields = $fieldManager->selectAllFields();
+        $startingField = $fieldManager->selectFieldById($_SESSION['round']);
+        $nextField = $fieldManager->selectFieldById($_SESSION['round'] + 1);
+
+
+        $equippedAccessories = [];
+        $errors = [];
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            var_dump($_POST);
-            die;
+            if (!isset($_POST['equipments'])) {
+                $errors['errorEquipment'] = 'Veuillez choisir au moins un équipement';
+            } else {
+                foreach ($_POST['equipments'] as $equipmentId) {
+                    $equippedAccessories[] = $accessoryManager->getAccessoryById($equipmentId);
+                }
+            }
+            var_dump($equippedAccessories);
+            if (empty($errors)) {
+                return $this->twig->render('Workshop/index.html.twig', [
+                    'session' => $_SESSION,
+                    'equippedAccessories' => $equippedAccessories,
+                    'accessories' => $accessories,
+                    'robots' => $robots,
+                    'startingField' => $startingField,
+                    'nextField' => $nextField,
+                ]);
+            }
         }
-
         return $this->twig->render('Workshop/index.html.twig', [
+            'session' => $_SESSION,
             'accessories' => $accessories,
             'robots' => $robots,
-            'fields' => $fields,
+            'startingField' => $startingField,
+            'nextField' => $nextField,
+            'errors' => $errors,
         ]);
+    }
+
+
+    public function result()
+    {
+
     }
 }
