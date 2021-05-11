@@ -15,7 +15,7 @@ class FieldManager extends AbstractManager
 
     public function selectFieldById(int $id)
     {
-        $query = "SELECT type, image
+        $query = "SELECT type, image, description
                     FROM field
                     WHERE id=:id";
         $statement = $this->pdo->prepare($query);

@@ -1,0 +1,10 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="bg-light">
+        <h1>{{ message }}</h1>
+        <form action="../Workshop/index" method="post">
+            <button class="btn btn-primary">>>> Retourner à l'atelier >>></button>
+        </form>
+    </div>
+{% endblock %}

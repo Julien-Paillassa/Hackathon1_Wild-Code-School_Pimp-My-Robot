@@ -10,8 +10,6 @@ class WorkshopController extends AbstractController
 {
     public function index()
     {
-        $_SESSION['round'] = 1;
-
         $accessoryManager = new AccessoryManager();
         $accessories = $accessoryManager->selectAllAccessories();
 
@@ -34,6 +32,7 @@ class WorkshopController extends AbstractController
                     $equippedAccessories[] = $accessoryManager->getAccessoryById($equipmentId);
                 }
             }
+            $_SESSION['equippedAccessories'] = $equippedAccessories;
             if (empty($errors)) {
                 return $this->twig->render('Workshop/index.html.twig', [
                     'session' => $_SESSION,
@@ -58,6 +57,5 @@ class WorkshopController extends AbstractController
 
     public function result()
     {
-
     }
 }
