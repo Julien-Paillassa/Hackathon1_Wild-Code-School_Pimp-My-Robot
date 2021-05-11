@@ -17,9 +17,17 @@
                     <button class="btn btn-primary">EQUIP ME !</button>
                 </div>
                 <div class="bg-robot-workshop d-flex flex-column justify-content-center align-item-center p-3">
-                    <img src="/assets/images/equipments/{{ equippedAccessories.image }}" alt="">
+                    {% for equippedAccessory in equippedAccessories %}
+                        {% if equippedAccessory.emplacement == 'top' %}
+                            <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
+                        {% endif %}
+                    {% endfor %}
                     <img src="/assets/images/equipments/robot_flat.svg" alt="">
-                    <img src="/assets/images/equipments/roues.svg" alt="">
+                    {% for equippedAccessory in equippedAccessories %}
+                        {% if equippedAccessory.emplacement == 'bottom' %}
+                            <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
+                        {% endif %}
+                    {% endfor %}
                 </div>
             </form>
 
