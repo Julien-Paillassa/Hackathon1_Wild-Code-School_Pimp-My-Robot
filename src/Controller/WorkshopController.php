@@ -20,7 +20,8 @@ class WorkshopController extends AbstractController
         $fields = $fieldManager->selectAllFields();
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            /*var_dump($_POST);die;*/
+            var_dump($_POST);
+            die;
         }
 
         return $this->twig->render('Workshop/index.html.twig', [
