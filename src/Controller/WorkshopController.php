@@ -2,12 +2,29 @@
 
 namespace App\Controller;
 
+use App\Model\AccessoryManager;
+use App\Model\FieldManager;
+use App\Model\RobotManager;
+
 class WorkshopController extends AbstractController
 {
     public function index()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        }
-        return $this->twig->render('Workshop/index.html.twig');
+        $accessoryManager = new AccessoryManager();
+        $accessories = $accessoryManager->selectAllAccessories();
+
+        $robotManager = new RobotManager();
+        $robots = $robotManager->selectAllRobots();
+
+        $fieldManager = new FieldManager();
+        $fields = $fieldManager->selectAllFields();
+
+
+
+        return $this->twig->render('Workshop/index.html.twig', [
+            'accessories' => $accessories,
+            'robots' => $robots,
+            'fields' => $fields,
+        ]);
     }
 }
