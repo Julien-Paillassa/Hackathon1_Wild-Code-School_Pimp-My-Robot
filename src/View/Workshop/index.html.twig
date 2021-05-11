@@ -1,0 +1,38 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <form class="col-7 d-flex flex-column justify-content-center align-item-center" action="" method="post">
+                <h2>Liste des équipements</h2>
+                <div class="equipment-list row p-5">
+                    {% for i in 0..5 %}
+                        <div class="col-4">
+                            <input type="checkbox" name="equipment[]" id="equipment">
+                            <label for="equipment"><img src="/assets/images/equipments/cater.svg" alt="robot" width="100px"></label>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="bg-robot-workshop d-flex flex-column">
+                    <img src="/assets/images/equipments/drill.svg" alt="">
+                    <img src="/assets/images/equipments/robot_flat.svg" alt="">
+                    <img src="/assets/images/equipments/cater.svg" alt="">
+                </div>
+                <div>
+                    <button class="btn btn-primary">EQUIP ME !</button>
+                </div>
+            </form>
+            <form class="col-5" action="journey" method="post">
+                <div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem dolorum ea eaque facilis ipsa modi, optio pariatur porro quam qui quis quos reiciendis rerum sint, tenetur ullam ut voluptate!</p>
+                </div>
+                <div>
+                    <img  class="w-100" src="/assets/images/maps/Desert martien.jpg" alt="désert martien">
+                </div>
+                <div>
+                    <button class="btn btn-primary">GO GO GO !</button>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
