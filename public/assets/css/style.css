@@ -1,37 +1,10 @@
 @import "workshop.css";
+@import "contexte.css";
+@import "final.css";
 body {
     background: white;
 }
 
 .btn, .btn-primary {
     background-color: #AE4C13;
-}
-.contexte{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background: url(https://cdn.futura-sciences.com/buildsv6/images/wide1920/9/7/5/975fff45f6_50019555_curiosity-skycrane-mars-nasa.jpg);
-}
-.robot{
-    width: 250px;
-    transform: translateX(750px) translateY(-50px);
-}
-.intro{
-    font-size: 40px;
-    width: 500px;
-    height: auto;
-    color: #CBCBCB;
-    margin-left: 60px;
-    margin-top: 50px;
-}
-.intro-h1{
-    color: #CBCBCB;
-    font-size: 50px;
-    margin-left: 20px;
-}
-.bouton-intro {
-    position: absolute;
-    right: 100px;
-    font-size: 25px;
 }
