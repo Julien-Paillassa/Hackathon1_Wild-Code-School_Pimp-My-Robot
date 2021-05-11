@@ -5,21 +5,21 @@
         <div class="row">
             <form class="workshop-form col-6 d-flex flex-column justify-content-center align-item-center mr-5 py-2" action="" method="post">
                 <h2 class="text-center">Liste des équipements</h2>
-                <div class="equipment-list row p-5">
-                    {% for i in 0..5 %}
+                <div class="equipment-list row pr-5 pl-5 pt-2 pb-1">
+                    {% for accessory in accessories %}
                         <div class="col-4">
-                            <input type="checkbox" name="equipment[]" id="equipment{{ loop.index }}">
-                            <label role="button" class="p-3 m-1" for="equipment{{ loop.index }}"><img src="/assets/images/equipments/cater.svg" alt="robot" width="100px"></label>
+                            <input type="checkbox" name="equipments[]" id="{{ accessory.id }}" value="{{ accessory.id }}">
+                            <label role="button" class="p-3 m-1" for="{{ accessory.id }}"><img src="/assets/images/equipments/{{ accessory.image }}" alt="robot" width="100px" height="60px"></label>
                         </div>
                     {% endfor %}
+                </div>
+                <div class="text-center my-4">
+                    <button class="btn btn-primary">EQUIP ME !</button>
                 </div>
                 <div class="bg-robot-workshop d-flex flex-column justify-content-center align-item-center p-3">
                     <img src="/assets/images/equipments/drill.svg" alt="">
                     <img src="/assets/images/equipments/robot_flat.svg" alt="">
-                    <img src="/assets/images/equipments/cater.svg" alt="">
-                </div>
-                <div class="text-center mt-3">
-                    <button class="btn btn-primary">EQUIP ME !</button>
+                    <img src="/assets/images/equipments/roues.svg" alt="">
                 </div>
             </form>
 
