@@ -1,10 +1,14 @@
 @import "workshop.css";
+@import "journey.css";
 @import "contexte.css";
 @import "final.css";
-body {
-    background: black;
-}
 
+body {
+    /*background: white;*/
+    background-image: url("https://share.america.gov/wp-content/uploads/2017/01/602861main_pia14293-amended-full_full-1068x601.jpg");
+    background-size: cover;
+}
 .btn, .btn-primary {
     background-color: #AE4C13;
+    border: 1px solid transparent;
 }

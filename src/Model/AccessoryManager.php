@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Model;
 
 class AccessoryManager extends AbstractManager
