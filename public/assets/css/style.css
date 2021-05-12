@@ -21,4 +21,5 @@ body {
 .btn:hover, .btn-primary:hover {
     background-color: #c2752f;
     border: 1px solid transparent;
+    color: white;
 }
