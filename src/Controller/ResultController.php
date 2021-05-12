@@ -2,6 +2,9 @@
 
 namespace App\Controller;
 
+use App\Model\FieldManager;
+use App\Model\AccessoryManager;
+
 class ResultController extends AbstractController
 {
     /*acc
@@ -56,6 +59,9 @@ class ResultController extends AbstractController
                 }
                 break;
         }
+        $fieldManager = new FieldManager();
+        $fieldManager->selectFieldById($_SESSION['round']);
+        $field = $fieldManager->selectFieldById($_SESSION['round'] + 1);
 
         $situationReport = '/###===###/ ERROR 404 : TERRAIN IMPRATICABLE /###===###/';
         if ($state) {
@@ -65,6 +71,8 @@ class ResultController extends AbstractController
         return $this->twig->render('Result/index.html.twig', [
             'state'   => $state,
             'message' => $situationReport,
+            'field' => $field,
+            'equipement' => $equippedAccessories,
         ]);
     }
 }

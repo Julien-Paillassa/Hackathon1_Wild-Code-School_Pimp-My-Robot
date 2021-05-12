@@ -3,11 +3,49 @@
     top: 0;
     left: 0;
     background-size: cover;
-    background: url(https://cdn.futura-sciences.com/buildsv6/images/wide1920/9/7/5/975fff45f6_50019555_curiosity-skycrane-mars-nasa.jpg);
+    background: url('https://cdn.futura-sciences.com/buildsv6/images/wide1920/9/7/5/975fff45f6_50019555_curiosity-skycrane-mars-nasa.jpg');
 }
 .robot{
-    width: 250px;
-    transform: translateX(750px) translateY(50px);/*-70*/
+    width: 420px;
+    position: absolute;
+    left: 630px;
+    /*transform: translateX(750px) translateY(50px);!*-70*!*/
+
+    -webkit-animation-name: robot;
+    animation-name: robot;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+@-webkit-keyframes robot {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
+}
+@keyframes robot {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        -webkit-transform: translate3d(-10px, 0, 0);
+        transform: translate3d(-10px, 0, 0);
+    }
+    20%, 40%, 60%, 80% {
+        -webkit-transform: translate3d(10px, 0, 0);
+        transform: translate3d(10px, 0, 0);
+    }
 }
 .intro{
     font-size: 20px;
