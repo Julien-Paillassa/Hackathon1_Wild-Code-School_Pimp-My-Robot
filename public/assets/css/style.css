@@ -2,6 +2,7 @@
 @import "journey.css";
 @import "contexte.css";
 @import "final.css";
+@import "result.css";
 
 body {
     /*background: white;*/
@@ -20,4 +21,5 @@ body {
 .btn:hover, .btn-primary:hover {
     background-color: #c2752f;
     border: 1px solid transparent;
+    color: white;
 }
