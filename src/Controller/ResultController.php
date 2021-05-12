@@ -19,6 +19,7 @@ class ResultController extends AbstractController
      5 - glace -> 4 seul
      6 - robot -> 5 & 6
      */
+
     public function index()
     {
         $destinationFieldId = $_SESSION['round'] + 1;
