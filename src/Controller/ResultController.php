@@ -22,7 +22,7 @@ class ResultController extends AbstractController
 
     public function index()
     {
-        $situationReport = '/###===###/ ERROR 404 : TERRAIN IMPRATICABLE /###===###/';
+        $situationReport = '/###===###/ ERROR 404 : TERRAIN IMPASSABLE /###===###/';
         $destinationFieldId = $_SESSION['round'] + 1;
         $equippedAccessories = $_SESSION['equippedAccessories'];
         $eqAccId = [];
@@ -58,6 +58,11 @@ class ResultController extends AbstractController
                 case 3:
                     if (in_array(1, $eqAccId) && in_array(2, $eqAccId)) {
                         $state = true;
+                    } elseif (!in_array(1,$eqAccBottom)) {
+                        $situationReport .= 'IMPOSSIBLE TO MOVE CORRECTLY WITH THIS BOTTOM EQUIPMENT/###===###/';
+                    }
+                    if (!in_array(2,$eqAccTop)) {
+                        $situationReport .= 'IMPOSSIBLE TO DIG/###===###/';
                     }
                     break;
                 case 4:
@@ -79,7 +84,7 @@ class ResultController extends AbstractController
         }
 
         if ($state) {
-            $situationReport = '/###===###/ MSG 200 : TERRAIN FRANCHI ! /###===###/';
+            $situationReport = '/###===###/ MSG 200 : LAND CROSSED ! /###===###/';
             $_SESSION['round']++;
         }
         return $this->twig->render('Result/index.html.twig', [
