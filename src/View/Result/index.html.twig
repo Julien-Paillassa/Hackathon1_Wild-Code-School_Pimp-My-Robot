@@ -1,10 +1,64 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <div class="bg-light">
-        <h1>{{ message }}</h1>
-        <form action="../Workshop/index" method="post">
-            <button class="btn btn-primary">>>> Retourner à l'atelier >>></button>
-        </form>
+    <div class="container" >
+        <div>
+                <h1>{{ message }}</h1>
+        </div>
+        <div class="bg-result" style="background: url('/assets/images/maps/{{ field.image }}') no-repeat">
+            {% if (state == true) %}
+                <div class="success-robot d-flex flex-column" style="margin: 150px;margin-left: 520px;">
+                    {% for equip in equipement %}
+                        {% if equip.emplacement == 'top' %}
+                            <img src="/assets/images/equipments/{{ equip.image }}" alt="">
+                        {% endif %}
+                    {% endfor %}
+                    <img src="/assets/images/equipments/robot_success.svg" alt="success-robot">
+                    {% for equip in equipement %}
+                        {% if equip.emplacement == 'bottom' %}
+                            <img src="/assets/images/equipments/{{ equip.image }}" alt="">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div>
+                    <form action="../Workshop/index" method="post">
+                        <button class="btn btn-primary" style="margin-left: 160px;font-size: 50px;">>>> Continuer >>></button>
+                    </form>
+                </div>
+            {% else %}
+                <div class="warning-robot d-flex flex-column ml-5">
+                    {% for equip in equipement %}
+                        {% if equip.emplacement == 'top' %}
+                            <img src="/assets/images/equipments/{{ equip.image }}" alt="">
+                        {% endif %}
+                    {% endfor %}
+                    <img src="/assets/images/equipments/robot_warning.svg" alt="warning-robot">
+                    {% for equip in equipement %}
+                        {% if equip.emplacement == 'bottom' %}
+                            <img src="/assets/images/equipments/{{ equip.image }}" alt="">
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div>
+                    <form action="../Workshop/index" method="post">
+                        <button class="btn btn-primary margin-left" style="margin-left: 160px;font-size: 50px;">>>> Retourner à l'atelier >>></button>
+                    </form>
+                </div>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
+
+{#<div class="complete-robot d-flex flex-column">#}
+{#    {% for equippedAccessory in equippedAccessories %}#}
+{#        {% if equippedAccessory.emplacement == 'top' %}#}
+{#            <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">#}
+{#        {% endif %}#}
+{#    {% endfor %}#}
+{#    <img src="/assets/images/equipments/robot_flat.svg" alt="">#}
+{#    {% for equippedAccessory in equippedAccessories %}#}
+{#        {% if equippedAccessory.emplacement == 'bottom' %}#}
+{#            <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">#}
+{#        {% endif %}#}
+{#    {% endfor %}#}
+{#</div>#}
