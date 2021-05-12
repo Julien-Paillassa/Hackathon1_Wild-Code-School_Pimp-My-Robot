@@ -33,7 +33,7 @@
 
             <form class="gogogo-form col-5 d-flex flex-column align-item-center justify-content-center" action="../Journey/index" method="post">
                 <div class="my-2">
-                    <p class="px-3">{{ nextField.description }}</p>
+                    <p class="next-field-description p-3 mt-3">{{ nextField.description }}<span class="terminal-animation">I</span></p>
                 </div>
                 {% for equippedAccessory in equippedAccessories %}
                     <input type="hidden" name="equipments[]" id="{{ equippedAccessory.id }}" value="{{ equippedAccessory.id }}">
@@ -43,7 +43,7 @@
                     <input type="hidden" name="startingField" id="{{ startingField.id }}" value="{{ startingField.id }}">
                     <img  class="w-100" src="/assets/images/maps/{{ nextField.image }}" alt="next-destination">
                 </div>
-                <div class="text-center my-2">
+                <div class="text-center mb-3">
                     <button class="btn btn-primary">GO GO GO !</button>
                 </div>
             </form>
