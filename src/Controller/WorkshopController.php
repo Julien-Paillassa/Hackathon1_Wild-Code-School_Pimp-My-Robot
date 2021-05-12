@@ -8,8 +8,12 @@ use App\Model\RobotManager;
 
 class WorkshopController extends AbstractController
 {
+    public const MAX_ROUNDS = 3;
     public function index()
     {
+        if ($_SESSION['round'] >= self::MAX_ROUNDS) {
+            header('Location: /Final/index');
+        }
         $accessoryManager = new AccessoryManager();
         $accessories = $accessoryManager->selectAllAccessories();
 
