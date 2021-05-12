@@ -10,6 +10,7 @@
     left: 400px;
     -webkit-animation-name: slideOutRight;
     animation-name: slideOutRight;
+    animation-delay: 2s;git che
     -webkit-animation-duration: 5s;
     animation-duration: 5s;
     -webkit-animation-fill-mode: both;
@@ -43,3 +44,87 @@
         transform: translateX(250%);
     }
 }
+
+.start-journey img {
+    width: 20%;
+}
+
+.start-journey {
+    width: 20%;
+    position: absolute;
+    top: 250px;
+    left: 400px;
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    z-index: 3;
+}
+
+@-webkit-keyframes slideInDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+@keyframes slideInDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+        visibility: visible;
+    }
+    100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+}
+
+.end-journey img {
+    width: 20%;
+}
+
+.end-journey {
+    width: 20%;
+    position: absolute;
+    top: 250px;
+    left: 400px;
+    -webkit-animation-name: slideOutUp;
+    animation-name: slideOutUp;
+    animation-delay: 7s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    z-index: 3;
+}
+
+@-webkit-keyframes slideOutUp {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        visibility: hidden;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+@keyframes slideOutUp {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    100% {
+        visibility: hidden;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+
