@@ -1,10 +1,58 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-    <div class="bg-light">
-        <h1>{{ message }}</h1>
-        <form action="../Workshop/index" method="post">
-            <button class="btn btn-primary">>>> Retourner à l'atelier >>></button>
-        </form>
+<div class="container" >
+    <div class="text-center">
+        {% if (state == true) %}
+        <div class="text-center">
+            <h2 style="color: greenyellow;">{{ message }}</h2>
+        </div>
+        <div>
+            <form action="../Workshop/index" method="post">
+                <button class="btn btn-primary">>>> Continuer >>></button>
+            </form>
+        </div>
+        {% else %}
+        <div class="text-center">
+            <h2 style="color: red;">{{ message }}</h2>
+        </div>
+        <div>
+            <form action="../Workshop/index" method="post">
+                <button class="btn btn-primary margin-left">>>> Retourner à l'atelier >>></button>
+            </form>
+        </div>
+        {% endif %}
     </div>
+    <div class="bg-result" style="background: center / contain no-repeat url('/assets/images/maps/{{ field.image }}')">
+        {% if (state == true) %}
+            <div class="success-robot d-flex flex-column">
+                {% for equip in equipement %}
+                    {% if equip.emplacement == 'top' %}
+                        <img src="/assets/images/equipments/{{ equip.image }}" alt="">
+                    {% endif %}
+                {% endfor %}
+                <img src="/assets/images/equipments/robot_success.svg" alt="success-robot">
+                {% for equip in equipement %}
+                    {% if equip.emplacement == 'bottom' %}
+                        <img src="/assets/images/equipments/{{ equip.image }}" alt="">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="warning-robot d-flex flex-column">
+                {% for equip in equipement %}
+                    {% if equip.emplacement == 'top' %}
+                        <img src="/assets/images/equipments/{{ equip.image }}" alt="">
+                    {% endif %}
+                {% endfor %}
+                <img src="/assets/images/equipments/robot_warning.svg" alt="warning-robot">
+                {% for equip in equipement %}
+                    {% if equip.emplacement == 'bottom' %}
+                        <img src="/assets/images/equipments/{{ equip.image }}" alt="">
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</div>
 {% endblock %}
