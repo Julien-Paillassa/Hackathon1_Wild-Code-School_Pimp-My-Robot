@@ -68,16 +68,22 @@ class ResultController extends AbstractController
                 case 4:
                     if (in_array(3, $eqAccId) && count($eqAccId) === 1) {
                         $state = true;
+                    } elseif (!empty($eqAccBottom)) {
+                        $situationReport .= 'OVER EQUIPPED ROBOT ON THE BOTTOM - IMPOSSIBLE TO MOVE /###===###/';
                     }
                     break;
                 case 5:
                     if (in_array(4, $eqAccId) && count($eqAccId) === 1) {
                         $state = true;
+                    } elseif (!empty($eqAccTop)) {
+                        $situationReport .= 'OVER EQUIPPED ROBOT ON THE TOP - IMPOSSIBLE TO MOVE /###===###/';
                     }
                     break;
                 case 6:
                     if (in_array(5, $eqAccId) && in_array(6, $eqAccId)) {
                         $state = true;
+                    } elseif (!in_array(6, $eqAccBottom)) {
+                        $situationReport .= 'HAVE TO MOVE FAST !! /###===###/';
                     }
                     break;
             }
