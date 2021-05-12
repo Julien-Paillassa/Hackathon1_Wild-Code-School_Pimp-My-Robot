@@ -5,20 +5,7 @@
     <div class="journey-container d-flex justify-content-around my-5">
         <div class="my-2">
             <img src="/assets/images/maps/{{ startingField.image }}" alt="departure point">
-            <div class="start-journey d-flex flex-column">
-                {% for equippedAccessory in equippedAccessories %}
-                    {% if equippedAccessory.emplacement == 'top' %}
-                        <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
-                    {% endif %}
-                {% endfor %}
-                <img src="/assets/images/equipments/robot_flat.svg" alt="">
-                {% for equippedAccessory in equippedAccessories %}
-                    {% if equippedAccessory.emplacement == 'bottom' %}
-                        <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="complete-robot d-flex flex-column">
+            <div class="mountain-robot d-flex flex-column">
                 {% for equippedAccessory in equippedAccessories %}
                     {% if equippedAccessory.emplacement == 'top' %}
                         <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
@@ -34,19 +21,6 @@
         </div>
         <div class="my-2">
             <img src="/assets/images/maps/{{ nextField.image }}" alt="next destination">
-            <div class="end-journey d-flex flex-column">
-                {% for equippedAccessory in equippedAccessories %}
-                    {% if equippedAccessory.emplacement == 'top' %}
-                        <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
-                    {% endif %}
-                {% endfor %}
-                <img src="/assets/images/equipments/robot_flat.svg" alt="">
-                {% for equippedAccessory in equippedAccessories %}
-                    {% if equippedAccessory.emplacement == 'bottom' %}
-                        <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
-                    {% endif %}
-                {% endfor %}
-            </div>
         </div>  
     </div>
     <div class="container">
