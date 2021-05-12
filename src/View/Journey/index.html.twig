@@ -5,7 +5,19 @@
     <div class="journey-container d-flex justify-content-around my-5">
         <div class="my-2">
             <img src="/assets/images/maps/{{ startingField.image }}" alt="departure point">
-            <div class="mountain-robot d-flex flex-column">
+            <div class="d-flex flex-column
+                           {% if nextField.id == 2 %}
+                                {{ 'mountain-robot' }}
+                            {% elseif nextField.id == 3 %}
+                                {{ 'desert-robot' }}
+                            {% elseif nextField.id == 4 %}
+                                {{ 'crevasse-robot' }}
+                            {% elseif nextField.id == 5 %}
+                                {{ 'glace-robot' }}
+                            {% else %}
+                                {{ 'complete-robot' }}
+                            {% endif %}
+                            ">
                 {% for equippedAccessory in equippedAccessories %}
                     {% if equippedAccessory.emplacement == 'top' %}
                         <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
