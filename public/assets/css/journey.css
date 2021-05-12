@@ -279,6 +279,7 @@
 
 
 
+
 .bounce {
     -webkit-animation-name: bounce;
     animation-name: bounce;
@@ -371,3 +372,4 @@
         transform: translate3d(2000px, 0, 0);
     }
 }
+

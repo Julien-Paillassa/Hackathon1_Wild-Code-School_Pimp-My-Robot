@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
-
 {% block content %}
+    <div class="body-workshop">
     <div class="container mt-4">
         <div class="row">
             <form class="workshop-form col-6 d-flex flex-column justify-content-center align-item-center mr-5 py-2" action="" method="post">
@@ -8,7 +8,9 @@
                 <div class="equipment-list row pr-5 pl-5 pt-2 pb-1">
                     {% for accessory in accessories %}
                         <div class="col-4">
-                            <input type="checkbox" name="equipments[]" id="{{ accessory.id }}" value="{{ accessory.id }}">
+                            <input type="checkbox" name="equipments[]" id="{{ accessory.id }}" value="{{ accessory.id }}" {% for equippedAccessory in equippedAccessories %}
+                                                                                                                            {{ (accessory.id == equippedAccessory.id) ? 'checked' : ''}}
+                                                                                                                          {% endfor %}>
                             <label role="button" class="p-3 m-1" for="{{ accessory.id }}"><img src="/assets/images/equipments/{{ accessory.image }}" alt="robot" width="100px" height="60px"></label>
                         </div>
                     {% endfor %}
@@ -16,7 +18,7 @@
                 <div class="text-center my-4">
                     <button class="btn btn-primary">EQUIP ME !</button>
                 </div>
-                    <div class="bg-robot-workshop d-flex flex-column justify-content-center align-item-center p-3">
+                    <div class="bg-robot-workshop d-flex flex-column justify-content-center align-item-center p-3" style="background-image: url('/assets/images/maps/{{ startingField.image }}')">
                         {% for equippedAccessory in equippedAccessories %}
                             {% if equippedAccessory.emplacement == 'top' %}
                                 <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
@@ -33,23 +35,21 @@
 
             <form class="gogogo-form col-5 d-flex flex-column align-item-center justify-content-center" action="../Journey/index" method="post">
                 <div class="my-2">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem dolorum ea eaque facilis ipsa modi, optio pariatur porro quam qui quis quos reiciendis rerum sint, tenetur ullam ut voluptate!</p>
+                    <p class="next-field-description p-3 mt-3">{{ nextField.description }}<span class="terminal-animation">I</span></p>
                 </div>
                 {% for equippedAccessory in equippedAccessories %}
                     <input type="hidden" name="equipments[]" id="{{ equippedAccessory.id }}" value="{{ equippedAccessory.id }}">
                 {% endfor %}
                 <div class="my-5">
-                    <input type="hidden" name="startingField" id="{{ startingField.id }}" value="{{ startingField.id }}">
-                    <img  class="w-100" src="/assets/images/maps/{{ startingField.image }}" alt="next-destination">
-                </div>
-                <div class="my-5">
                     <input type="hidden" name="nextField" id="{{ nextField.id }}" value="{{ nextField.id }}">
+                    <input type="hidden" name="startingField" id="{{ startingField.id }}" value="{{ startingField.id }}">
                     <img  class="w-100" src="/assets/images/maps/{{ nextField.image }}" alt="next-destination">
                 </div>
-                <div class="text-center my-2">
+                <div class="text-center mb-3">
                     <button class="btn btn-primary">GO GO GO !</button>
                 </div>
             </form>
         </div>
+    </div>
     </div>
 {% endblock %}
