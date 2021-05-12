@@ -8,7 +8,7 @@ use App\Model\RobotManager;
 
 class WorkshopController extends AbstractController
 {
-    public const MAX_ROUNDS = 3;
+    public const MAX_ROUNDS = 6;
     public function index()
     {
         if ($_SESSION['round'] >= self::MAX_ROUNDS) {

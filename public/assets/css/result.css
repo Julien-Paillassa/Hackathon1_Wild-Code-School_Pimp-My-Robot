@@ -7,11 +7,16 @@
 .success-robot, .warning-robot{
 }
 .bg-result{
+    background-size: cover;
+    position: relative;
     width: 1000px;
     height: 750px;
     position: relative;
 }
 .success-robot{
+    position: absolute;
+    top: 150px;
+    left: 280px;
     -webkit-animation-name: success-robot;
     animation-name: success-robot;
     -webkit-animation-duration: 1s;

@@ -5,9 +5,24 @@
         <div>
                 <h1>{{ message }}</h1>
         </div>
+        <div>
+            {% if (state == true) %}
+            <div>
+                <form action="../Workshop/index" method="post">
+                    <button class="btn btn-primary">>>> Continuer >>></button>
+                </form>
+            </div>
+            {% else %}
+            <div>
+                <form action="../Workshop/index" method="post">
+                    <button class="btn btn-primary margin-left">>>> Retourner à l'atelier >>></button>
+                </form>
+            </div>
+            {% endif %}
+        </div>
         <div class="bg-result" style="background: url('/assets/images/maps/{{ field.image }}') no-repeat">
             {% if (state == true) %}
-                <div class="success-robot d-flex flex-column" style="margin: 150px;margin-left: 520px;">
+                <div class="success-robot d-flex flex-column">
                     {% for equip in equipement %}
                         {% if equip.emplacement == 'top' %}
                             <img src="/assets/images/equipments/{{ equip.image }}" alt="">
@@ -20,13 +35,8 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div>
-                    <form action="../Workshop/index" method="post">
-                        <button class="btn btn-primary" style="margin-left: 160px;font-size: 50px;">>>> Continuer >>></button>
-                    </form>
-                </div>
             {% else %}
-                <div class="warning-robot d-flex flex-column ml-5">
+                <div class="warning-robot d-flex flex-column">
                     {% for equip in equipement %}
                         {% if equip.emplacement == 'top' %}
                             <img src="/assets/images/equipments/{{ equip.image }}" alt="">
@@ -39,26 +49,7 @@
                         {% endif %}
                     {% endfor %}
                 </div>
-                <div>
-                    <form action="../Workshop/index" method="post">
-                        <button class="btn btn-primary margin-left" style="margin-left: 160px;font-size: 50px;">>>> Retourner à l'atelier >>></button>
-                    </form>
-                </div>
             {% endif %}
         </div>
     </div>
 {% endblock %}
-
-{#<div class="complete-robot d-flex flex-column">#}
-{#    {% for equippedAccessory in equippedAccessories %}#}
-{#        {% if equippedAccessory.emplacement == 'top' %}#}
-{#            <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">#}
-{#        {% endif %}#}
-{#    {% endfor %}#}
-{#    <img src="/assets/images/equipments/robot_flat.svg" alt="">#}
-{#    {% for equippedAccessory in equippedAccessories %}#}
-{#        {% if equippedAccessory.emplacement == 'bottom' %}#}
-{#            <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">#}
-{#        {% endif %}#}
-{#    {% endfor %}#}
-{#</div>#}

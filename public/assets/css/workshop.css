@@ -13,22 +13,31 @@
 
 .equipment-list input[type="checkbox"]:checked + label {
     border-radius: 12px;
-    background: #ffffff;
+    /*background: #ffffff;*/
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur( 1px );
+    -webkit-backdrop-filter: blur( 1px );
     border: 1px solid grey;
     box-shadow: 0 0 0 transparent;
 }
 
 .equipment-list input[type="checkbox"] + label {
     border-radius: 12px;
-    background: #ffffff;
+    /*background: #ffffff;
+    background: #C1C5CE;
     box-shadow:  6px 6px 8px #e3e3e3,
-    -6px -6px 8px #ffffff;
+    -6px -6px 8px #ffffff;*/
+    background: rgba( 255, 255, 255, 0.00 );
+    backdrop-filter: blur( 2.5px );
+    -webkit-backdrop-filter: blur( 2.5px );
     border: 1px solid transparent;
+    box-shadow:  5px 5px 10px #b2b5be, -5px -5px 10px #d0d5de;
 }
 
 .workshop-form, .gogogo-form {
     background: white;
-    border-radius: 4px;
+    border-radius: 6px;
+    background-image: url('/assets/images/robot/bg-robotic-white.jpg');
 }
 
 .bg-robot-workshop img {
@@ -39,8 +48,8 @@
     -webkit-transform-origin: center bottom;
     -ms-transform-origin: center bottom;
     transform-origin: center bottom;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
+    -webkit-animation-duration: 2s;
+    animation-duration: 2s;
     animation-iteration-count: infinite;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
@@ -91,4 +100,9 @@
     }
     90% { -webkit-transform: translate3d(0,-4px,0); transform: translate3d(0,-4px,0);
     }
+}
+
+.next-field-description {
+    background-color: black;
+    color: greenyellow;
 }
