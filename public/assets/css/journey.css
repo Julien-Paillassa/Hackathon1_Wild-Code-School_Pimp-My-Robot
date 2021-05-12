@@ -30,7 +30,6 @@
         transform: translateX(0);
     }
     100% {
-        visibility: hidden;
         -webkit-transform: translateX(250%);
         transform: translateX(250%);
     }
@@ -41,7 +40,6 @@
         transform: translateX(0);
     }
     100% {
-        visibility: hidden;
         -webkit-transform: translateX(250%);
         transform: translateX(250%);
     }

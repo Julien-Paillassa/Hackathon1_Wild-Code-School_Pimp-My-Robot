@@ -1,5 +1,5 @@
 .bg-robot-workshop {
-    background-image: url("/assets/images/maps/Desert martien.jpg");
+    background-size: cover;
 }
 
 .bg-robot-workshop img {
@@ -14,7 +14,7 @@
 .equipment-list input[type="checkbox"]:checked + label {
     border-radius: 12px;
     background: #ffffff;
-    border: 1px solid #EBEBEB;
+    border: 1px solid grey;
     box-shadow: 0 0 0 transparent;
 }
 

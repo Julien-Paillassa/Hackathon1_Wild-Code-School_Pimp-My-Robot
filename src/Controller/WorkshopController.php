@@ -8,8 +8,12 @@ use App\Model\RobotManager;
 
 class WorkshopController extends AbstractController
 {
+    public const MAX_ROUNDS = 3;
     public function index()
     {
+        if ($_SESSION['round'] >= self::MAX_ROUNDS) {
+            header('Location: /Final/index');
+        }
         $accessoryManager = new AccessoryManager();
         $accessories = $accessoryManager->selectAllAccessories();
 
@@ -31,6 +35,7 @@ class WorkshopController extends AbstractController
                     $equippedAccessories[] = $accessoryManager->getAccessoryById($equipmentId);
                 }
             }
+            $_SESSION['equippedAccessories'] = $equippedAccessories;
             if (empty($errors)) {
                 return $this->twig->render('Workshop/index.html.twig', [
                     'session' => $_SESSION,
