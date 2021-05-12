@@ -2,17 +2,20 @@
 
 {% block content %}
     <div class="container" >
-        <div>
-                <h1 style="color: white;">{{ message }}</h1>
-        </div>
-        <div>
+        <div class="text-center">
             {% if (state == true) %}
+            <div class="text-center">
+                <h2 style="color: greenyellow;">{{ message }}</h2>
+            </div>
             <div>
                 <form action="../Workshop/index" method="post">
                     <button class="btn btn-primary">>>> Continuer >>></button>
                 </form>
             </div>
             {% else %}
+            <div class="text-center">
+                <h2 style="color: red;">{{ message }}</h2>
+            </div>
             <div>
                 <form action="../Workshop/index" method="post">
                     <button class="btn btn-primary margin-left">>>> Retourner à l'atelier >>></button>
@@ -20,7 +23,7 @@
             </div>
             {% endif %}
         </div>
-        <div class="bg-result" style="background: url('/assets/images/maps/{{ field.image }}') no-repeat">
+        <div class="bg-result" style="background: center / contain no-repeat url('/assets/images/maps/{{ field.image }}')">
             {% if (state == true) %}
                 <div class="success-robot d-flex flex-column">
                     {% for equip in equipement %}
