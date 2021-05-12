@@ -7,18 +7,20 @@
 }
 .robot{
     width: 250px;
-    transform: translateX(750px) translateY(-70px);
+    transform: translateX(750px) translateY(50px);/*-70*/
 }
 .intro{
-    font-size: 40px;
+    font-size: 20px;
     width: 500px;
     height: auto;
-    color: #CBCBCB;
+    /*color: #CBCBCB;*/
+    background-color: black;
+    color: greenyellow;
     margin-left: 60px;
     margin-top: 50px;
 }
 .intro-h1{
-    color: #CBCBCB;
+    color: white;
     font-size: 50px;
     margin-left: 20px;
 }
@@ -26,4 +28,37 @@
     position: absolute;
     right: 100px;
     font-size: 25px;
+}
+
+.terminal-animation {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.7rem;
+    -webkit-animation-name: flash;
+    animation-name: flash;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+        display: none;
+    }
+}
+
+@keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+
+    25%, 75% {
+        opacity: 0;
+    }
 }
