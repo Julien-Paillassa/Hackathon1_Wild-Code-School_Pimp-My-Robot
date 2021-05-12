@@ -1,6 +1,6 @@
 {% extends 'layout.html.twig' %}
-
 {% block content %}
+    <div class="body-workshop">
     <div class="container mt-4">
         <div class="row">
             <form class="workshop-form col-6 d-flex flex-column justify-content-center align-item-center mr-5 py-2" action="" method="post">
@@ -8,7 +8,10 @@
                 <div class="equipment-list row pr-5 pl-5 pt-2 pb-1">
                     {% for accessory in accessories %}
                         <div class="col-4">
-                            <input type="checkbox" name="equipments[]" id="{{ accessory.id }}" value="{{ accessory.id }}">
+                            <input type="checkbox" name="equipments[]" id="{{ accessory.id }}" value="{{ accessory.id }}" {% for equippedAccessory in equippedAccessories %}
+                                                                                                                            {{ (accessory.id == equippedAccessory.id) ? 'checked' : ''}}
+                                                                                                                          {% endfor %}>
+
                             <label role="button" class="p-3 m-1" for="{{ accessory.id }}"><img src="/assets/images/equipments/{{ accessory.image }}" alt="robot" width="100px" height="60px"></label>
                         </div>
                     {% endfor %}
@@ -48,5 +51,6 @@
                 </div>
             </form>
         </div>
+    </div>
     </div>
 {% endblock %}

@@ -10,6 +10,8 @@ body {
     /*font-family: 'Fira Code', monospace;*/
     font-family: 'Press Start 2P', cursive;
 }
+
+
 .btn, .btn-primary {
     background-color: #AE4C13;
     border: 1px solid transparent;
