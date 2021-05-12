@@ -16,29 +16,34 @@
                 <div class="text-center my-4">
                     <button class="btn btn-primary">EQUIP ME !</button>
                 </div>
-                <div class="bg-robot-workshop d-flex flex-column justify-content-center align-item-center p-3">
-                    {% for equippedAccessory in equippedAccessories %}
-                        {% if equippedAccessory.emplacement == 'top' %}
-                            <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
-                        {% endif %}
-                    {% endfor %}
-                    <img src="/assets/images/equipments/robot_flat.svg" alt="">
-                    {% for equippedAccessory in equippedAccessories %}
-                        {% if equippedAccessory.emplacement == 'bottom' %}
-                            <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
-                        {% endif %}
-                    {% endfor %}
-                </div>
+                    <div class="bg-robot-workshop d-flex flex-column justify-content-center align-item-center p-3">
+                        {% for equippedAccessory in equippedAccessories %}
+                            {% if equippedAccessory.emplacement == 'top' %}
+                                <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
+                            {% endif %}
+                        {% endfor %}
+                        <img src="/assets/images/equipments/robot_flat.svg" alt="">
+                        {% for equippedAccessory in equippedAccessories %}
+                            {% if equippedAccessory.emplacement == 'bottom' %}
+                                <img src="/assets/images/equipments/{{ equippedAccessory.image }}" alt="">
+                            {% endif %}
+                        {% endfor %}
+                    </div>
             </form>
 
             <form class="gogogo-form col-5 d-flex flex-column align-item-center justify-content-center" action="../Journey/index" method="post">
                 <div class="my-2">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto dolorem dolorum ea eaque facilis ipsa modi, optio pariatur porro quam qui quis quos reiciendis rerum sint, tenetur ullam ut voluptate!</p>
                 </div>
+                {% for equippedAccessory in equippedAccessories %}
+                    <input type="hidden" name="equipments[]" id="{{ equippedAccessory.id }}" value="{{ equippedAccessory.id }}">
+                {% endfor %}
                 <div class="my-5">
+                    <input type="hidden" name="startingField" id="{{ startingField.id }}" value="{{ startingField.id }}">
                     <img  class="w-100" src="/assets/images/maps/{{ startingField.image }}" alt="next-destination">
                 </div>
                 <div class="my-5">
+                    <input type="hidden" name="nextField" id="{{ nextField.id }}" value="{{ nextField.id }}">
                     <img  class="w-100" src="/assets/images/maps/{{ nextField.image }}" alt="next-destination">
                 </div>
                 <div class="text-center my-2">

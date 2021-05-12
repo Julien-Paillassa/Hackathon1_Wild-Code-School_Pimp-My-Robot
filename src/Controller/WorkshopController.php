@@ -10,8 +10,6 @@ class WorkshopController extends AbstractController
 {
     public function index()
     {
-        $_SESSION['round'] = 1;
-
         $accessoryManager = new AccessoryManager();
         $accessories = $accessoryManager->selectAllAccessories();
 
@@ -21,7 +19,6 @@ class WorkshopController extends AbstractController
         $fieldManager = new FieldManager();
         $startingField = $fieldManager->selectFieldById($_SESSION['round']);
         $nextField = $fieldManager->selectFieldById($_SESSION['round'] + 1);
-
 
         $equippedAccessories = [];
         $errors = [];
@@ -53,11 +50,5 @@ class WorkshopController extends AbstractController
             'nextField' => $nextField,
             'errors' => $errors,
         ]);
-    }
-
-
-    public function result()
-    {
-
     }
 }
