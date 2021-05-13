@@ -29,7 +29,7 @@ class WorkshopController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' || $_SESSION['journeyIsPreviousPage']) {
             if (!isset($_POST['equipments'])) {
-                $errors['errorEquipment'] = 'Veuillez choisir au moins un équipement';
+                $errors['errorEquipment'] = 'Veuillez équiper le robot avant de partir';
             } else {
                 foreach ($_POST['equipments'] as $equipmentId) {
                     $equippedAccessories[] = $accessoryManager->getAccessoryById($equipmentId);
@@ -37,26 +37,14 @@ class WorkshopController extends AbstractController
             }
             $_SESSION['equippedAccessories'] = $equippedAccessories;
         }
-            //if (empty($errors)) {
-                return $this->twig->render('Workshop/index.html.twig', [
-                    'session' => $_SESSION,
-                    'equippedAccessories' => $equippedAccessories,
-                    'accessories' => $accessories,
-                    'robots' => $robots,
-                    'startingField' => $startingField,
-                    'nextField' => $nextField,
-                    'errors' => $errors,
-                ]);
-            //}
-        //}
-        /*
         return $this->twig->render('Workshop/index.html.twig', [
             'session' => $_SESSION,
+            'equippedAccessories' => $equippedAccessories,
             'accessories' => $accessories,
             'robots' => $robots,
             'startingField' => $startingField,
             'nextField' => $nextField,
             'errors' => $errors,
-        ]);*/
+        ]);
     }
 }

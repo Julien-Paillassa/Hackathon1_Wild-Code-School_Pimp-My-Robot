@@ -9,7 +9,6 @@
 }
 .heart-final{
     margin-left: 80px;
-
     -webkit-animation-name: heart-final;
     animation-name: heart-final;
     -webkit-animation-duration: 1s;
