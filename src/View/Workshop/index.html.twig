@@ -40,14 +40,14 @@
                 {% for equippedAccessory in equippedAccessories %}
                     <input type="hidden" name="equipments[]" id="{{ equippedAccessory.id }}" value="{{ equippedAccessory.id }}">
                 {% endfor %}
-                <div class="my-5">
+                <div class="mt-2 mb-5">
                     <input type="hidden" name="nextField" id="{{ nextField.id }}" value="{{ nextField.id }}">
                     <input type="hidden" name="startingField" id="{{ startingField.id }}" value="{{ startingField.id }}">
                     <img  class="w-100" src="/assets/images/maps/{{ nextField.image }}" alt="next-destination">
                 </div>
                 <div class="text-center mb-3">
                     <button class="btn btn-primary">GO GO GO !</button>
-                    <div class="alert-danger">{{ errors.errorEquipment }}</div>
+                    <div class="alert-danger mt-2">{{ errors.errorEquipment }}</div>
                 </div>
             </form>
         </div>
