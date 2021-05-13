@@ -22,6 +22,7 @@ class HomeController extends AbstractController
     public function index()
     {
         $_SESSION['round'] = 1;
+        $_SESSION['journeyIsPreviousPage'] = false;
         return $this->twig->render('Home/index.html.twig');
     }
 }
