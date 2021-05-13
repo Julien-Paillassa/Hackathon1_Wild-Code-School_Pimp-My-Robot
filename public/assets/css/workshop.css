@@ -13,7 +13,6 @@
 
 .equipment-list input[type="checkbox"]:checked + label {
     border-radius: 12px;
-    /*background: #ffffff;*/
     background: rgba(255, 255, 255, 0);
     backdrop-filter: blur( 1px );
     -webkit-backdrop-filter: blur( 1px );
@@ -23,10 +22,6 @@
 
 .equipment-list input[type="checkbox"] + label {
     border-radius: 12px;
-    /*background: #ffffff;
-    background: #C1C5CE;
-    box-shadow:  6px 6px 8px #e3e3e3,
-    -6px -6px 8px #ffffff;*/
     background: rgba( 255, 255, 255, 0.00 );
     backdrop-filter: blur( 2.5px );
     -webkit-backdrop-filter: blur( 2.5px );

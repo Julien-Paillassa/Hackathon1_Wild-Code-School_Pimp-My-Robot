@@ -1,16 +1,13 @@
 .contexte{
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-size: cover;
-    background: url('https://cdn.futura-sciences.com/buildsv6/images/wide1920/9/7/5/975fff45f6_50019555_curiosity-skycrane-mars-nasa.jpg');
+    height: 95vh;
+    position: relative;
+    background: center / cover no-repeat url('https://cdn.futura-sciences.com/buildsv6/images/wide1920/9/7/5/975fff45f6_50019555_curiosity-skycrane-mars-nasa.jpg');
 }
 .robot{
-    width: 420px;
+    width: 450px;
     position: absolute;
     left: 630px;
-    /*transform: translateX(750px) translateY(50px);!*-70*!*/
-
+    bottom: -20px;
     -webkit-animation-name: robot;
     animation-name: robot;
     -webkit-animation-duration: 1s;

@@ -5,21 +5,17 @@
     <div class="text-center">
         {% if (state == true) %}
         <div class="text-center">
-            <h2 style="color: greenyellow;">{{ message }}</h2>
+            <h2 style="color: greenyellow;background-color: black">{{ message }}<span class="terminal-animation">I</span></h2>
         </div>
         <div>
-            <form action="../Workshop/index" method="post">
-                <button class="btn btn-primary">>>> Continuer >>></button>
-            </form>
+            <a href="/Workshop/index"><button class="btn btn-primary">>>> Continuer >>></button></a>
         </div>
         {% else %}
         <div class="text-center">
-            <h2 style="color: red;">{{ message }}</h2>
+            <h2 style="color: red;background-color: black">{{ message }}<span class="terminal-animation">I</span></h2>
         </div>
         <div>
-            <form action="../Workshop/index" method="post">
-                <button class="btn btn-primary margin-left">>>> Retourner à l'atelier >>></button>
-            </form>
+            <a href="/Workshop/index"><button class="btn btn-primary margin-left">>>> Retourner à l'atelier >>></button></a>
         </div>
         {% endif %}
     </div>

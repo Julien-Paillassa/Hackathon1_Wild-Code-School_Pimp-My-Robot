@@ -12,14 +12,17 @@ class JourneyController extends AbstractController
     {
         $robotManager = new RobotManager();
         $robots = $robotManager->selectAllRobots();
-
         $equippedAccessories = [];
-
+        $_SESSION['journeyIsPreviousPage'] = true;
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            if (!isset($_POST['equipments'])) {
+                header('Location: /Workshop/index');
+                die;
+            }
+            $_SESSION['journeyIsPreviousPage'] = false;
             $fieldManager = new FieldManager();
             $startingField = $fieldManager->selectFieldById($_POST['startingField']);
             $nextField = $fieldManager->selectFieldById($_POST['nextField']);
-
             foreach ($_POST['equipments'] as $equipmentId) {
                 $accessoryManager = new AccessoryManager();
                 $equippedAccessories[] = $accessoryManager->getAccessoryById($equipmentId);
